@@ -98,10 +98,78 @@
 									generates genre predictions, and creates visualizations. 
 								</p>
 								<h2>Analysis and research results</h2>
+								<h4>I: Training Data</h4>
+								<p>
+									In order to conduct the analysis, data was collected regarding the 
+									audio features of 6,000 songs. This data was obtained from featured 
+									playlists on Spotify for specific music genres. The collected data 
+									was divided into 6 groups, each containing approximately 1,000 records, 
+									and the corresponding genre was assigned to each subset. Six general 
+									genres were selected for the analysis: Classical, Alternative, Electronic, 
+									HipHop, Pop, and Rock. 
+
+									Module 1 facilitated the export of data into Pandas dataframes and the 
+									creation of multiple datasets with variations based on the selected modifications. 
+									The available modifications were as follows:
+									<br />
+									<br />
+									<b>Populating Median Neighbourhood (PMN):</b> This modification allowed for the 
+									generation of additional random samples within the range where the sample 
+									density was highest.
+									<br />
+									<b>Calculated Features (CF):</b> This modification enabled the derivation of 
+									additional information to extract additional relationships between 
+									individual samples.
+									<br />
+									<b>Trimming (Trim):</b> This modification allowed for the removal of outliers 
+									for selected features.
+									<br />
+									These modifications provided flexibility in analyzing the data and 
+									exploring different aspects of the relationship between audio features 
+									and genres.
+								</p>
+								<h4>II: ML Algorithms</h4>
+								<p>
+									The generated datasets were used as training sets for ML algorithms. 
+									Four algorithms were utilized during the analysis:
+									<br />
+									1. Decision Trees
+									<br />
+									2. Random Forests
+									<br /> 
+									3. Stochastic Gradient Descent
+									<br />
+									4. k-Nearest Neighbors
+									<br />
+									Depending on the selected dataset, the parameters for each algorithm were 
+									tuned using the GridSearchCV method from the sklearn library. Evaluation 
+									on the test set revealed that the above algorithms achieved varying 
+									percentages of accurate predictions for different modifications.
+									<br />
+									<br />
+									Among the algorithms used, the Random Forest algorithm achieved the 
+									best result for the populated data. Below are the prediction [%] results 
+									and an example confusion matrix for the best-performing algorithm
+									<div class="image main"><img src="images/MLAlgResults.png" alt="" /></div>
+									<p>Labels dictionary: <br />
+										{'alternative': 0,
+										'classical': 1,
+										'electronic': 2,
+										'hiphop': 3,
+										'pop': 4,
+										'rock': 5}</p>
+									<div class="image main"><img src="images/mlaconfmatrix.png" alt="" /></div>
+									The Module II, available on GitHub, provides numerous possibilities for 
+									additional modifications and methods for selecting individual songs and 
+									assigning them appropriate genres to effectively train the algorithms. 
+									This module offers flexibility and options to further enhance the training 
+									process and improve the accuracy of genre prediction.
+								</p>
+								<h4>III: Neural Network models</h4>
 								<p>
 									...
 								</p>
-								<h4>Example API screenshots</h4>
+
 								<p>
 									<!-- <img src="/Portfolio/images/Projectimg1.png" alt="" style="width:430px;height:300px;">
 									<img src="/Portfolio/images/Projectimg2.png" alt="" style="width:430px;height:300px;"> <br />
